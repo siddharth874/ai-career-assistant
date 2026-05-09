@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+*.egg-info/
+
+# Node / React
+node_modules/
+dist/
+build/
+.next/
+
+# Editor
+.vscode/settings.json
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.production
