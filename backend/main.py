@@ -32,10 +32,10 @@ app = FastAPI(
 # so the browser allows React to talk to FastAPI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,   # Which frontends can call us
-    allow_credentials=True,           # Allow cookies to be sent
-    allow_methods=["*"],              # Allow GET, POST, PUT, DELETE, etc.
-    allow_headers=["*"],              # Allow any headers
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 app.include_router(chat.router)
 # -------------------------------------------------------
