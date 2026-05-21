@@ -34,3 +34,22 @@ export async function sendChatMessage(text, history = []) {
 export async function checkHealth() {
   return apiRequest("/health")
 }
+
+export async function getConversations() {
+  return apiRequest("/conversations/")
+}
+
+export async function getConversation(conversationId) {
+  return apiRequest(`/conversations/${conversationId}`)
+}
+
+export async function sendConversationMessage(content, conversationId = null) {
+  return apiRequest("/conversations/message", "POST", {
+    content,
+    conversation_id: conversationId,
+  })
+}
+
+export async function deleteConversation(conversationId) {
+  return apiRequest(`/conversations/${conversationId}`, "DELETE")
+}

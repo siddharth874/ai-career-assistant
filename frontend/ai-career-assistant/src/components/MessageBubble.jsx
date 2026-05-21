@@ -1,5 +1,13 @@
 // src/components/MessageBubble.jsx
-// Add one small change — show model info on AI messages
+
+function formatTime(timestamp) {
+  const date = new Date(timestamp)
+
+  return date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+}
 
 function MessageBubble({ message }) {
   const isUser = message.role === "user"
@@ -18,10 +26,9 @@ function MessageBubble({ message }) {
 
       <div className={`flex flex-col gap-1 max-w-xl ${isUser ? "items-end" : "items-start"}`}>
 
-        {/* Show "Claude" label above AI messages */}
         {!isUser && (
           <span className="text-xs text-blue-400 font-medium px-1">
-            Claude AI
+            AI Assistant
           </span>
         )}
 
@@ -43,3 +50,5 @@ function MessageBubble({ message }) {
     </div>
   )
 }
+
+export default MessageBubble 
